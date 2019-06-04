@@ -12,6 +12,10 @@
 		566AF06B22A6FF73003DE1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566AF06A22A6FF73003DE1CF /* Assets.xcassets */; };
 		566AF06E22A6FF73003DE1CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566AF06C22A6FF73003DE1CF /* LaunchScreen.storyboard */; };
 		566AF07822A6FF81003DE1CF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566AF07722A6FF81003DE1CF /* CloudKit.framework */; };
+		566AF07D22A70748003DE1CF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF07C22A70748003DE1CF /* Post.swift */; };
+		566AF08022A70901003DE1CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF07F22A70901003DE1CF /* Constants.swift */; };
+		566AF08222A70A76003DE1CF /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08122A70A76003DE1CF /* PostController.swift */; };
+		566AF08522A70AA6003DE1CF /* CKController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08422A70AA6003DE1CF /* CKController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		566AF06F22A6FF73003DE1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566AF07522A6FF7F003DE1CF /* CKContinuum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CKContinuum.entitlements; sourceTree = "<group>"; };
 		566AF07722A6FF81003DE1CF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		566AF07C22A70748003DE1CF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		566AF07F22A70901003DE1CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		566AF08122A70A76003DE1CF /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		566AF08422A70AA6003DE1CF /* CKController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,8 @@
 				566AF07522A6FF7F003DE1CF /* CKContinuum.entitlements */,
 				566AF07A22A6FFCE003DE1CF /* Resources */,
 				566AF07B22A6FFDA003DE1CF /* Storyboards */,
+				566AF07E22A7074D003DE1CF /* Models */,
+				566AF08322A70A7A003DE1CF /* Model Controllers */,
 			);
 			path = CKContinuum;
 			sourceTree = "<group>";
@@ -89,6 +99,24 @@
 				566AF06C22A6FF73003DE1CF /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		566AF07E22A7074D003DE1CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				566AF07F22A70901003DE1CF /* Constants.swift */,
+				566AF07C22A70748003DE1CF /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		566AF08322A70A7A003DE1CF /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				566AF08422A70AA6003DE1CF /* CKController.swift */,
+				566AF08122A70A76003DE1CF /* PostController.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +199,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				566AF06422A6FF72003DE1CF /* AppDelegate.swift in Sources */,
+				566AF08222A70A76003DE1CF /* PostController.swift in Sources */,
+				566AF07D22A70748003DE1CF /* Post.swift in Sources */,
+				566AF08022A70901003DE1CF /* Constants.swift in Sources */,
+				566AF08522A70AA6003DE1CF /* CKController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
