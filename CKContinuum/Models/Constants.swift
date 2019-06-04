@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum RemoteRecords {
+enum Record {
     static let postKey = "Post"
 }
 
-enum RemotePost {
+enum PostRecord {
     static let imageKey = "image"
     static let captionKey = "caption"
 }
