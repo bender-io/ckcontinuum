@@ -16,6 +16,9 @@
 		566AF08022A70901003DE1CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF07F22A70901003DE1CF /* Constants.swift */; };
 		566AF08222A70A76003DE1CF /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08122A70A76003DE1CF /* PostController.swift */; };
 		566AF08522A70AA6003DE1CF /* CKController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08422A70AA6003DE1CF /* CKController.swift */; };
+		566AF08722A717FF003DE1CF /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08622A717FF003DE1CF /* PostTableViewController.swift */; };
+		566AF08A22A72BF3003DE1CF /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08922A72BF3003DE1CF /* HomeTableViewController.swift */; };
+		566AF08C22A72CF2003DE1CF /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08B22A72CF2003DE1CF /* DetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		566AF07F22A70901003DE1CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		566AF08122A70A76003DE1CF /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		566AF08422A70AA6003DE1CF /* CKController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKController.swift; sourceTree = "<group>"; };
+		566AF08622A717FF003DE1CF /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
+		566AF08922A72BF3003DE1CF /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		566AF08B22A72CF2003DE1CF /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 				566AF07B22A6FFDA003DE1CF /* Storyboards */,
 				566AF07E22A7074D003DE1CF /* Models */,
 				566AF08322A70A7A003DE1CF /* Model Controllers */,
+				566AF08822A71806003DE1CF /* View Controllers */,
 			);
 			path = CKContinuum;
 			sourceTree = "<group>";
@@ -117,6 +124,16 @@
 				566AF08122A70A76003DE1CF /* PostController.swift */,
 			);
 			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		566AF08822A71806003DE1CF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				566AF08622A717FF003DE1CF /* PostTableViewController.swift */,
+				566AF08922A72BF3003DE1CF /* HomeTableViewController.swift */,
+				566AF08B22A72CF2003DE1CF /* DetailTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +216,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				566AF06422A6FF72003DE1CF /* AppDelegate.swift in Sources */,
+				566AF08722A717FF003DE1CF /* PostTableViewController.swift in Sources */,
 				566AF08222A70A76003DE1CF /* PostController.swift in Sources */,
 				566AF07D22A70748003DE1CF /* Post.swift in Sources */,
+				566AF08C22A72CF2003DE1CF /* DetailTableViewController.swift in Sources */,
+				566AF08A22A72BF3003DE1CF /* HomeTableViewController.swift in Sources */,
 				566AF08022A70901003DE1CF /* Constants.swift in Sources */,
 				566AF08522A70AA6003DE1CF /* CKController.swift in Sources */,
 			);

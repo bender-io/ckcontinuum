@@ -28,18 +28,18 @@ class PostController {
     }
     
     func savePost(post: Post, completion: @escaping(Bool) -> Void) {
-        let postRecord = CKRecord(recordType: Record.postKey)
+        let postRecord = CKRecord(post: post)
         CKController.shared.privateDB.save(postRecord) { (record, error) in
             if let error = error {
                 print("🐥 Error found in \(#function) ; \(error.localizedDescription)")
                 completion(false) ; return
             }
-            else { print("Record saved!") }
             
             guard let record = record,
             let post = Post(ckRecord: record) else { print("No records found in \(#function)") ; completion(false) ; return }
             
             self.posts.append(post)
+            print("Record saved!")
 
         }
     }
