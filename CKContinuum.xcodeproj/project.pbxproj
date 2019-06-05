@@ -21,6 +21,7 @@
 		566AF08C22A72CF2003DE1CF /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08B22A72CF2003DE1CF /* DetailTableViewController.swift */; };
 		566AF0C022A85018003DE1CF /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF0BF22A85018003DE1CF /* DetailTableViewCell.swift */; };
 		566AF0C322A8559F003DE1CF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF0C222A8559F003DE1CF /* Comment.swift */; };
+		566AF0C522A875EF003DE1CF /* BoopTheSnoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF0C422A875EF003DE1CF /* BoopTheSnoopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		566AF08B22A72CF2003DE1CF /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		566AF0BF22A85018003DE1CF /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		566AF0C222A8559F003DE1CF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		566AF0C422A875EF003DE1CF /* BoopTheSnoopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopTheSnoopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				566AF08622A717FF003DE1CF /* PostTableViewController.swift */,
 				566AF08922A72BF3003DE1CF /* HomeTableViewController.swift */,
 				566AF08B22A72CF2003DE1CF /* DetailTableViewController.swift */,
+				566AF0C422A875EF003DE1CF /* BoopTheSnoopViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				566AF08C22A72CF2003DE1CF /* DetailTableViewController.swift in Sources */,
 				566AF08A22A72BF3003DE1CF /* HomeTableViewController.swift in Sources */,
 				566AF08022A70901003DE1CF /* Constants.swift in Sources */,
+				566AF0C522A875EF003DE1CF /* BoopTheSnoopViewController.swift in Sources */,
 				566AF08522A70AA6003DE1CF /* CKController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

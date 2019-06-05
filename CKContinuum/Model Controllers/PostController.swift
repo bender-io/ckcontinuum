@@ -18,14 +18,14 @@ class PostController {
     var posts : [Post] = []
     
     // MARK: - CRUD Functions
-    func createPostWith(caption: String, image: CKAsset) {
-        let post = Post(
-        savePost(post: post) { (success) in
-            if !success {
-                print("Error saving entry to CK in \(#function)") ; return
-            }
-        }
-    }
+//    func createPostWith(caption: String, image: CKAsset) {
+//        let post = Post(
+//        savePost(post: post) { (success) in
+//            if !success {
+//                print("Error saving entry to CK in \(#function)") ; return
+//            }
+//        }
+//    }
     
     func savePost(post: Post, completion: @escaping(Bool) -> Void) {
         let postRecord = CKRecord(post: post)

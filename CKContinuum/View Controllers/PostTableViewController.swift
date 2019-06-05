@@ -10,23 +10,30 @@ import UIKit
 
 class PostTableViewController: UITableViewController {
 
+    // MARK: - Properties
+    var selectedBoop : UIImage?
+
     @IBOutlet weak var postTextField: UITextField!
     
-    @IBOutlet weak var postImage: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    @IBAction func postButton(_ sender: Any) {
-        if let caption = postTextField.text, !caption.isEmpty,
-            let image = postImage.image {
-            PostController.shared.createPostWith(caption: caption, image: image)
-        }
-        else { print("🐍 Image and caption not set during \(#function)")}
-    }
+//    @IBAction func postButton(_ sender: Any) {
+//        if let caption = postTextField.text, !caption.isEmpty,
+//            let image = postImage.image {
+//            PostController.shared.createPostWith(caption: caption, image: <#T##CKAsset#>)
+//        }
+//        else { print("🐍 Image and caption not set during \(#function)")}
+//    }
+}
+
+extension PostTableViewController : BoopTheSnoopViewControllerDelegate {
     
-    @IBAction func selectImageGesture(_ sender: Any) {
+    func boopPickerSelectedWith(boop: UIImage?) {
+        guard let boop = boop else { return }
+        selectedBoop = boop
     }
-    
 }

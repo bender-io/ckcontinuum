@@ -23,6 +23,7 @@ class Comment {
         return CKRecord.Reference(recordID: post.ckRecordID, action: .deleteSelf)
     }
     
+    // MARK: - Inits
     init(post: Post, timestamp: Date = Date(), text: String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString) ) {
         self.post = post
         self.timestamp = timestamp

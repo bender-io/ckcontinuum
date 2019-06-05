@@ -69,19 +69,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="266.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_image" translatesAutoresizingMaskIntoConstraints="NO" id="jwv-9I-EgW">
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3R-Ua-aGl">
                                                     <rect key="frame" x="20" y="11" width="374" height="245"/>
-                                                    <gestureRecognizers/>
                                                     <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="hYH-2l-FMB" appends="YES" id="p5H-nj-lYE"/>
+                                                        <segue destination="Irf-rc-BVb" kind="embed" identifier="toBoopTheSnoopVC" id="oAq-r8-c0x"/>
                                                     </connections>
-                                                </imageView>
+                                                </containerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="jwv-9I-EgW" firstAttribute="top" secondItem="dJe-vE-5jR" secondAttribute="topMargin" id="PA8-y9-rr7"/>
-                                                <constraint firstItem="jwv-9I-EgW" firstAttribute="trailing" secondItem="dJe-vE-5jR" secondAttribute="trailingMargin" id="a2e-s5-yFY"/>
-                                                <constraint firstItem="jwv-9I-EgW" firstAttribute="leading" secondItem="dJe-vE-5jR" secondAttribute="leadingMargin" id="s0E-e8-ZQe"/>
-                                                <constraint firstItem="jwv-9I-EgW" firstAttribute="bottom" secondItem="dJe-vE-5jR" secondAttribute="bottomMargin" id="vNf-a2-FuB"/>
+                                                <constraint firstItem="l3R-Ua-aGl" firstAttribute="leading" secondItem="dJe-vE-5jR" secondAttribute="leadingMargin" id="KUb-RU-aB1"/>
+                                                <constraint firstItem="l3R-Ua-aGl" firstAttribute="top" secondItem="dJe-vE-5jR" secondAttribute="topMargin" id="Ywo-Ft-GM5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="l3R-Ua-aGl" secondAttribute="bottom" id="fmW-do-9HN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="l3R-Ua-aGl" secondAttribute="trailing" id="juF-4o-jaV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -105,9 +104,13 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="BiO-s7-3JS" firstAttribute="bottom" secondItem="SN6-6O-caX" secondAttribute="bottomMargin" id="BcA-fs-cru"/>
+                                                <constraint firstItem="BiO-s7-3JS" firstAttribute="leading" secondItem="SN6-6O-caX" secondAttribute="leadingMargin" id="HYd-oR-dDg"/>
+                                                <constraint firstItem="BiO-s7-3JS" firstAttribute="trailing" secondItem="SN6-6O-caX" secondAttribute="trailingMargin" id="Mgw-gj-7XM"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="BiO-s7-3JS" secondAttribute="trailing" id="TDF-YJ-fcw"/>
                                                 <constraint firstItem="BiO-s7-3JS" firstAttribute="leading" secondItem="SN6-6O-caX" secondAttribute="leadingMargin" id="XdQ-qV-83H"/>
                                                 <constraint firstItem="BiO-s7-3JS" firstAttribute="top" secondItem="SN6-6O-caX" secondAttribute="topMargin" id="j19-Tv-b8s"/>
+                                                <constraint firstItem="BiO-s7-3JS" firstAttribute="top" secondItem="SN6-6O-caX" secondAttribute="topMargin" id="xYd-sC-h7d"/>
                                                 <constraint firstItem="BiO-s7-3JS" firstAttribute="bottom" secondItem="SN6-6O-caX" secondAttribute="bottomMargin" id="xlp-KR-ETS"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -153,16 +156,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="geN-zw-nk8"/>
                     <connections>
-                        <outlet property="postImage" destination="jwv-9I-EgW" id="jKj-65-mNO"/>
                         <outlet property="postTextField" destination="BiO-s7-3JS" id="wBX-6w-sfw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-sc-0Bb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="hYH-2l-FMB">
-                    <connections>
-                        <action selector="selectImageGesture:" destination="S5D-aj-aIj" id="oMh-DV-PMn"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="892.75362318840587" y="97.767857142857139"/>
         </scene>
@@ -344,11 +341,48 @@
             </objects>
             <point key="canvasLocation" x="1682.608695652174" y="-664.28571428571422"/>
         </scene>
+        <!--Boop The Snoop View Controller-->
+        <scene sceneID="EdH-zh-oee">
+            <objects>
+                <viewController id="Irf-rc-BVb" customClass="BoopTheSnoopViewController" customModule="CKContinuum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rxt-t1-S4q">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dby-NA-AiI">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eok-1p-FRq">
+                                <rect key="frame" x="16" y="44" width="318" height="172"/>
+                                <state key="normal" title="Boop the Snoop"/>
+                                <connections>
+                                    <action selector="boopTheSnoopBooped:" destination="Irf-rc-BVb" eventType="touchUpInside" id="YV6-i1-O0i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eok-1p-FRq" secondAttribute="trailing" id="27A-oB-RTH"/>
+                            <constraint firstItem="Eok-1p-FRq" firstAttribute="top" secondItem="Rxt-t1-S4q" secondAttribute="topMargin" id="ioh-o2-W1J"/>
+                            <constraint firstItem="Eok-1p-FRq" firstAttribute="leading" secondItem="Rxt-t1-S4q" secondAttribute="leadingMargin" id="jdf-RV-8t3"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Eok-1p-FRq" secondAttribute="bottom" id="yCl-nx-jl6"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="350" height="250"/>
+                    <connections>
+                        <outlet property="boopTheSnoopButton" destination="Eok-1p-FRq" id="8g9-RS-QgU"/>
+                        <outlet property="currentBoop" destination="Dby-NA-AiI" id="uTj-uf-sXQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPs-hb-TEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1778" y="-19"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Add" width="22" height="22"/>
         <image name="Home Icon Tapped" width="30" height="30"/>
         <image name="home" width="26" height="25"/>
-        <image name="placeholder_image" width="134.5" height="93.5"/>
     </resources>
 </document>

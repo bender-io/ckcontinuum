@@ -19,7 +19,7 @@ class DetailTableViewCell: UITableViewCell {
     func updateViews() {
         guard let post = post else { return }
         captionLabel.text = post.caption
-        commentCountLabel.text = post.comments
+        commentCountLabel.text = String(post.commentCount)
     }
     
 }
