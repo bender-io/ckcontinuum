@@ -19,6 +19,8 @@
 		566AF08722A717FF003DE1CF /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08622A717FF003DE1CF /* PostTableViewController.swift */; };
 		566AF08A22A72BF3003DE1CF /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08922A72BF3003DE1CF /* HomeTableViewController.swift */; };
 		566AF08C22A72CF2003DE1CF /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF08B22A72CF2003DE1CF /* DetailTableViewController.swift */; };
+		566AF0C022A85018003DE1CF /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF0BF22A85018003DE1CF /* DetailTableViewCell.swift */; };
+		566AF0C322A8559F003DE1CF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF0C222A8559F003DE1CF /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		566AF08622A717FF003DE1CF /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		566AF08922A72BF3003DE1CF /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		566AF08B22A72CF2003DE1CF /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		566AF0BF22A85018003DE1CF /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		566AF0C222A8559F003DE1CF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 				566AF07E22A7074D003DE1CF /* Models */,
 				566AF08322A70A7A003DE1CF /* Model Controllers */,
 				566AF08822A71806003DE1CF /* View Controllers */,
+				566AF0C122A8501C003DE1CF /* Views */,
 			);
 			path = CKContinuum;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			children = (
 				566AF07F22A70901003DE1CF /* Constants.swift */,
 				566AF07C22A70748003DE1CF /* Post.swift */,
+				566AF0C222A8559F003DE1CF /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +140,14 @@
 				566AF08B22A72CF2003DE1CF /* DetailTableViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		566AF0C122A8501C003DE1CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				566AF0BF22A85018003DE1CF /* DetailTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,10 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566AF0C022A85018003DE1CF /* DetailTableViewCell.swift in Sources */,
 				566AF06422A6FF72003DE1CF /* AppDelegate.swift in Sources */,
 				566AF08722A717FF003DE1CF /* PostTableViewController.swift in Sources */,
 				566AF08222A70A76003DE1CF /* PostController.swift in Sources */,
 				566AF07D22A70748003DE1CF /* Post.swift in Sources */,
+				566AF0C322A8559F003DE1CF /* Comment.swift in Sources */,
 				566AF08C22A72CF2003DE1CF /* DetailTableViewController.swift in Sources */,
 				566AF08A22A72BF3003DE1CF /* HomeTableViewController.swift in Sources */,
 				566AF08022A70901003DE1CF /* Constants.swift in Sources */,

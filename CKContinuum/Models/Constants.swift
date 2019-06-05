@@ -8,11 +8,18 @@
 
 import Foundation
 
-enum RemoteRecord {
-    static let postKey = "Post"
+struct PostConstants {
+    static let typeKey = "Post"
+    static let captionKey = "caption"
+    static let timestampKey = "timestamp"
+    static let commentsKey = "comments"
+    static let photoKey = "photo"
+    static let commentCountKey = "commentCount"
 }
 
-enum RemotePost {
-    static let imageKey = "image"
-    static let captionKey = "caption"
+struct CommentConstants {
+    static let typeKey = "Comment"
+    static let textKey = "text"
+    static let timestampKey = "timestamp"
+    static let postReferenceKey = "post"
 }

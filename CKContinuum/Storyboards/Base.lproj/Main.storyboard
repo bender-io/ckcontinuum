@@ -71,24 +71,16 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_image" translatesAutoresizingMaskIntoConstraints="NO" id="jwv-9I-EgW">
                                                     <rect key="frame" x="20" y="11" width="374" height="245"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UP-cE-kxH">
-                                                    <rect key="frame" x="20" y="11" width="374" height="245"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                    <state key="normal" title="Select Image"/>
+                                                    <gestureRecognizers/>
                                                     <connections>
-                                                        <action selector="selectImageButton:" destination="S5D-aj-aIj" eventType="touchUpInside" id="fE8-CI-6CE"/>
+                                                        <outletCollection property="gestureRecognizers" destination="hYH-2l-FMB" appends="YES" id="p5H-nj-lYE"/>
                                                     </connections>
-                                                </button>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6UP-cE-kxH" firstAttribute="trailing" secondItem="dJe-vE-5jR" secondAttribute="trailingMargin" id="LHj-zj-D0P"/>
                                                 <constraint firstItem="jwv-9I-EgW" firstAttribute="top" secondItem="dJe-vE-5jR" secondAttribute="topMargin" id="PA8-y9-rr7"/>
-                                                <constraint firstItem="6UP-cE-kxH" firstAttribute="bottom" secondItem="dJe-vE-5jR" secondAttribute="bottomMargin" id="ZJE-1T-jZ5"/>
                                                 <constraint firstItem="jwv-9I-EgW" firstAttribute="trailing" secondItem="dJe-vE-5jR" secondAttribute="trailingMargin" id="a2e-s5-yFY"/>
-                                                <constraint firstItem="6UP-cE-kxH" firstAttribute="leading" secondItem="dJe-vE-5jR" secondAttribute="leadingMargin" id="ce2-rM-N3A"/>
                                                 <constraint firstItem="jwv-9I-EgW" firstAttribute="leading" secondItem="dJe-vE-5jR" secondAttribute="leadingMargin" id="s0E-e8-ZQe"/>
-                                                <constraint firstItem="6UP-cE-kxH" firstAttribute="top" secondItem="dJe-vE-5jR" secondAttribute="topMargin" id="vK1-bI-GzJ"/>
                                                 <constraint firstItem="jwv-9I-EgW" firstAttribute="bottom" secondItem="dJe-vE-5jR" secondAttribute="bottomMargin" id="vNf-a2-FuB"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -166,6 +158,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-sc-0Bb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hYH-2l-FMB">
+                    <connections>
+                        <action selector="selectImageGesture:" destination="S5D-aj-aIj" id="oMh-DV-PMn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="892.75362318840587" y="97.767857142857139"/>
         </scene>
@@ -206,7 +203,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="464" id="8ty-F6-wlh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="464" id="8ty-F6-wlh" customClass="DetailTableViewCell" customModule="CKContinuum" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="464"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ty-F6-wlh" id="F6s-V1-S30">
@@ -245,6 +242,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="captionLabel" destination="BcJ-6K-nVR" id="TDE-iI-DjQ"/>
+                                    <outlet property="commentCountLabel" destination="Sw1-wz-udt" id="Eq0-sd-DqH"/>
+                                    <outlet property="postImage" destination="CSZ-cU-vOl" id="tuT-TR-lDN"/>
                                     <segue destination="7uM-4K-FHb" kind="show" identifier="toDetailVC" id="dkj-Ug-rQy"/>
                                 </connections>
                             </tableViewCell>
@@ -293,18 +293,18 @@
                                     </subviews>
                                 </stackView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQt-Ir-Ev4">
-                                    <rect key="frame" x="8" y="52" width="398" height="387"/>
+                                    <rect key="frame" x="24" y="68" width="366" height="365"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailingMargin" secondItem="QQt-Ir-Ev4" secondAttribute="trailing" id="5un-UL-9A1"/>
-                                <constraint firstItem="QQt-Ir-Ev4" firstAttribute="leading" secondItem="ZRC-em-mS0" secondAttribute="leadingMargin" id="6WV-nB-eXS"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="QQt-Ir-Ev4" secondAttribute="trailing" constant="16" id="5un-UL-9A1"/>
+                                <constraint firstItem="QQt-Ir-Ev4" firstAttribute="leading" secondItem="ZRC-em-mS0" secondAttribute="leadingMargin" constant="16" id="6WV-nB-eXS"/>
                                 <constraint firstAttribute="bottom" secondItem="Acg-s6-T37" secondAttribute="bottom" constant="10" id="DQJ-dl-oeF"/>
                                 <constraint firstAttribute="trailing" secondItem="Acg-s6-T37" secondAttribute="trailing" id="I0W-Dj-2Ge"/>
-                                <constraint firstItem="Acg-s6-T37" firstAttribute="top" secondItem="QQt-Ir-Ev4" secondAttribute="bottom" constant="10" id="Qr1-mx-Xsz"/>
+                                <constraint firstItem="Acg-s6-T37" firstAttribute="top" secondItem="QQt-Ir-Ev4" secondAttribute="bottom" constant="16" id="Qr1-mx-Xsz"/>
                                 <constraint firstItem="Acg-s6-T37" firstAttribute="leading" secondItem="ZRC-em-mS0" secondAttribute="leading" id="YZD-w1-Bcn"/>
-                                <constraint firstItem="QQt-Ir-Ev4" firstAttribute="top" secondItem="ZRC-em-mS0" secondAttribute="topMargin" id="zVN-cC-JMs"/>
+                                <constraint firstItem="QQt-Ir-Ev4" firstAttribute="top" secondItem="ZRC-em-mS0" secondAttribute="topMargin" constant="16" id="zVN-cC-JMs"/>
                             </constraints>
                         </view>
                         <prototypes>

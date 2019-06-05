@@ -26,7 +26,7 @@ class PostTableViewController: UITableViewController {
         else { print("🐍 Image and caption not set during \(#function)")}
     }
     
-    @IBAction func selectImageButton(_ sender: Any) {
-        
+    @IBAction func selectImageGesture(_ sender: Any) {
     }
+    
 }

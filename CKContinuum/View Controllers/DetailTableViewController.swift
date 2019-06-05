@@ -11,11 +11,7 @@ import UIKit
 class DetailTableViewController: UITableViewController {
 
     // MARK: - Landing Pad
-    var post : Post? {
-        didSet {
-            
-        }
-    }
+    var post : Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
