@@ -11,29 +11,42 @@ import UIKit
 class PostTableViewController: UITableViewController {
 
     // MARK: - Properties
-    var selectedBoop : UIImage?
+    var selectedImage : UIImage?
 
-    @IBOutlet weak var postTextField: UITextField!
+    // MARK: - IBoutlets
+    @IBOutlet weak var captionTextField: UITextField!
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: Lifecycle Methods
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        captionTextField.text = nil
+        
     }
 
-//    @IBAction func postButton(_ sender: Any) {
-//        if let caption = postTextField.text, !caption.isEmpty,
-//            let image = postImage.image {
-//            PostController.shared.createPostWith(caption: caption, image: <#T##CKAsset#>)
-//        }
-//        else { print("🐍 Image and caption not set during \(#function)")}
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPhotoSelectorVC" {
+            let destinationVC = segue.destination as? PhotoSelectorViewController
+            destinationVC?.delegate = self
+        }
+    }
+    
+//     MARK: - IBOutlets
+    @IBAction func postButtonTapped(_ sender: Any) {
+        guard let photo = selectedImage,
+        let caption = captionTextField.text else { return }
+        PostController.shared.createPostWith(caption: caption, photo: photo) { (post) in
+            if post == nil {
+                print("🙉 Monkey found in \(#function) ; no post found.")
+            }
+        }
+        self.tabBarController?.selectedIndex = 0
+    }
 }
 
-extension PostTableViewController : BoopTheSnoopViewControllerDelegate {
+extension PostTableViewController : PhotoSelectorViewControllerDelegate {
     
-    func boopPickerSelectedWith(boop: UIImage?) {
-        guard let boop = boop else { return }
-        selectedBoop = boop
+    func photoSelectorViewControllerSelected(image: UIImage?) {
+        guard let image = image else { return }
+        selectedImage = image
     }
 }

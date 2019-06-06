@@ -29,9 +29,9 @@ class Post {
     }
     var imageAsset : CKAsset? {
         get {
-            let temporaryDirectory = NSTemporaryDirectory()
-            let temporaryDirectoryURL = URL(fileURLWithPath: temporaryDirectory)
-            let fileURL = temporaryDirectoryURL.appendingPathComponent(ckRecordID.recordName).appendingPathExtension("png")
+            let tempDirectory = NSTemporaryDirectory()
+            let tempDirectoryURL = URL(fileURLWithPath: tempDirectory)
+            let fileURL = tempDirectoryURL.appendingPathComponent(ckRecordID.recordName).appendingPathExtension("png")
             do {
                 try photoData?.write(to: fileURL)
             } catch {
@@ -42,13 +42,12 @@ class Post {
     }
     
     // MARK: - Inits
-    init(comments: [Comment], caption: String, timestamp: Date, commentCount: Int, ckRecordID: CKRecord.ID, photoData: Data?, photo: UIImage?, imageAsset: CKAsset?) {
+    init(comments: [Comment] = [], caption: String, timestamp: Date = Date(), commentCount: Int = 0, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), photo: UIImage?) {
         self.comments = comments
         self.caption = caption
         self.timestamp = timestamp
         self.commentCount = commentCount
         self.ckRecordID = ckRecordID
-        self.photoData = photoData
         self.photo = photo
     }
     

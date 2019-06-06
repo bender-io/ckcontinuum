@@ -10,7 +10,11 @@ import UIKit
 
 class DetailTableViewCell: UITableViewCell {
     
-    var post : Post?
+    var post : Post? {
+        didSet {
+            updateViews()
+        }
+    }
     
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentCountLabel: UILabel!
@@ -20,6 +24,7 @@ class DetailTableViewCell: UITableViewCell {
         guard let post = post else { return }
         captionLabel.text = post.caption
         commentCountLabel.text = String(post.commentCount)
+        postImage.image = post.photo
     }
     
 }

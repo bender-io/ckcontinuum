@@ -13,23 +13,34 @@ class PostController {
     
     // MARK: - Singelton
     static let shared = PostController()
+    private init () {}
     
     // MARK: - Source of Truth Local
     var posts : [Post] = []
     
-    // MARK: - CRUD Functions
-//    func createPostWith(caption: String, image: CKAsset) {
-//        let post = Post(
-//        savePost(post: post) { (success) in
-//            if !success {
-//                print("Error saving entry to CK in \(#function)") ; return
-//            }
-//        }
-//    }
+    // MARK: - CRUD Methods
+    func createPostWith(caption: String, photo: UIImage, completion: @escaping(Post?) -> Void) {
+        
+        let post = Post(caption: caption, photo: photo)
+        self.posts.append(post)
+        
+        let record = CKRecord(post: post)
+        CKController.shared.publicDB.save(record) { (record, error) in
+            if let error = error {
+                print("🐢 Turtle found in \(#function) ; \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let record = record,
+            let post = Post(ckRecord: record) else { completion(nil) ; return }
+            completion(post)
+        }
+    }
     
     func savePost(post: Post, completion: @escaping(Bool) -> Void) {
         let postRecord = CKRecord(post: post)
-        CKController.shared.privateDB.save(postRecord) { (record, error) in
+        CKController.shared.publicDB.save(postRecord) { (record, error) in
             if let error = error {
                 print("🐥 Error found in \(#function) ; \(error.localizedDescription)")
                 completion(false) ; return
@@ -40,6 +51,7 @@ class PostController {
             
             self.posts.append(post)
             print("Record saved!")
+            completion(true)
 
         }
     }

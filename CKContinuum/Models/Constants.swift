@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PostConstants {
+enum PostConstants {
     static let typeKey = "Post"
     static let captionKey = "caption"
     static let timestampKey = "timestamp"
@@ -17,7 +17,7 @@ struct PostConstants {
     static let commentCountKey = "commentCount"
 }
 
-struct CommentConstants {
+enum CommentConstants {
     static let typeKey = "Comment"
     static let textKey = "text"
     static let timestampKey = "timestamp"
