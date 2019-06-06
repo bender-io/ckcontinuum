@@ -35,7 +35,7 @@ class Post {
             do {
                 try photoData?.write(to: fileURL)
             } catch {
-                print("🐌 Snail it found in \(#function) ; \(error.localizedDescription)")
+                print("🐌 Snail found in \(#function) ; \(error.localizedDescription)")
             }
             return CKAsset(fileURL: fileURL)
         }
@@ -73,6 +73,21 @@ class Post {
     }
 }
 
+extension Post: SearchableRecord {
+    func matches(searchTerm: String) -> Bool {
+        if caption.contains(searchTerm) {
+            return true
+        } else {
+            for comment in comments {
+                if comment.matches(searchTerm: searchTerm) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+}
+
 extension CKRecord {
     convenience init(post: Post) {
         self.init(recordType: PostConstants.typeKey, recordID: post.ckRecordID)
@@ -82,4 +97,5 @@ extension CKRecord {
         setValue(post.imageAsset, forKey: PostConstants.photoKey)
     }
 }
+
 

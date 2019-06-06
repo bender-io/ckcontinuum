@@ -39,6 +39,12 @@ class Comment {
     }
 }
 
+extension Comment : SearchableRecord {
+    func matches(searchTerm: String) -> Bool {
+        return text.contains(searchTerm)
+    }
+}
+
 extension CKRecord {
     convenience init(comment: Comment) {
         self.init(recordType: CommentConstants.typeKey, recordID: comment.ckRecordID)

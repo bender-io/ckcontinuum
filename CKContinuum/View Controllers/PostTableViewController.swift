@@ -19,8 +19,6 @@ class PostTableViewController: UITableViewController {
     // MARK: Lifecycle Methods
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        captionTextField.text = nil
-        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,6 +37,7 @@ class PostTableViewController: UITableViewController {
                 print("🙉 Monkey found in \(#function) ; no post found.")
             }
         }
+        captionTextField.text = nil
         self.tabBarController?.selectedIndex = 0
     }
 }

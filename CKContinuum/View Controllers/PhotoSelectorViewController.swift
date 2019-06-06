@@ -29,7 +29,7 @@ class PhotoSelectorViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func selectPhotoButtonTapped(_ sender: Any) {
-        
+        presentImagePickerActionSheet()
     }
 }
 

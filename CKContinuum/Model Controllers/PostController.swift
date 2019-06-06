@@ -39,6 +39,7 @@ class PostController {
     }
     
     func savePost(post: Post, completion: @escaping(Bool) -> Void) {
+       
         let postRecord = CKRecord(post: post)
         CKController.shared.publicDB.save(postRecord) { (record, error) in
             if let error = error {
@@ -53,6 +54,28 @@ class PostController {
             print("Record saved!")
             completion(true)
 
+        }
+    }
+    
+    func fetchPosts(completion: @escaping([Post]?) -> Void) {
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: PostConstants.typeKey, predicate: predicate)
+        query.sortDescriptors = [NSSortDescriptor(key: PostConstants.timestampKey, ascending: false)]
+
+        CKController.shared.publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("🐰 Bunny found in \(#function) ; \(error.localizedDescription)")
+                completion([])
+                return
+            }
+            
+            guard let records = records else { print("🐶 Dog found while looking for fetchRecords in \(#function)") ; completion([]) ; return }
+            
+            print("Fetching Records!")
+            let posts = records.compactMap { Post(ckRecord: $0) }
+            self.posts = posts
+            completion(posts)
         }
     }
 }

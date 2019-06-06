@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		564F39EB22A9CCAB00703003 /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F39EA22A9CCAB00703003 /* SearchableRecord.swift */; };
 		566AF06422A6FF72003DE1CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AF06322A6FF72003DE1CF /* AppDelegate.swift */; };
 		566AF06922A6FF72003DE1CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566AF06722A6FF72003DE1CF /* Main.storyboard */; };
 		566AF06B22A6FF73003DE1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566AF06A22A6FF73003DE1CF /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		564F39EA22A9CCAB00703003 /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
 		566AF06022A6FF72003DE1CF /* CKContinuum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKContinuum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566AF06322A6FF72003DE1CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		566AF06822A6FF72003DE1CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,7 +79,6 @@
 		566AF06222A6FF72003DE1CF /* CKContinuum */ = {
 			isa = PBXGroup;
 			children = (
-				566AF07522A6FF7F003DE1CF /* CKContinuum.entitlements */,
 				566AF07A22A6FFCE003DE1CF /* Resources */,
 				566AF07B22A6FFDA003DE1CF /* Storyboards */,
 				566AF07E22A7074D003DE1CF /* Models */,
@@ -99,9 +100,11 @@
 		566AF07A22A6FFCE003DE1CF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				566AF07522A6FF7F003DE1CF /* CKContinuum.entitlements */,
 				566AF06322A6FF72003DE1CF /* AppDelegate.swift */,
 				566AF06A22A6FF73003DE1CF /* Assets.xcassets */,
 				566AF06F22A6FF73003DE1CF /* Info.plist */,
+				564F39EA22A9CCAB00703003 /* SearchableRecord.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				566AF0C022A85018003DE1CF /* DetailTableViewCell.swift in Sources */,
+				564F39EB22A9CCAB00703003 /* SearchableRecord.swift in Sources */,
 				566AF06422A6FF72003DE1CF /* AppDelegate.swift in Sources */,
 				566AF08722A717FF003DE1CF /* PostTableViewController.swift in Sources */,
 				566AF08222A70A76003DE1CF /* PostController.swift in Sources */,
@@ -388,7 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CKContinuum/CKContinuum.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CKContinuum/Resources/CKContinuum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F9Q94NNH5;
 				INFOPLIST_FILE = "$(SRCROOT)/CKContinuum/Resources/Info.plist";
@@ -407,7 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CKContinuum/CKContinuum.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CKContinuum/Resources/CKContinuum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F9Q94NNH5;
 				INFOPLIST_FILE = "$(SRCROOT)/CKContinuum/Resources/Info.plist";

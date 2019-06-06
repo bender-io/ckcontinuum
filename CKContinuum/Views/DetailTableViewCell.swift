@@ -26,5 +26,4 @@ class DetailTableViewCell: UITableViewCell {
         commentCountLabel.text = String(post.commentCount)
         postImage.image = post.photo
     }
-    
 }

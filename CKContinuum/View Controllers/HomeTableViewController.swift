@@ -10,8 +10,12 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - Properties
+    var searchArray : [SearchableRecord] = []
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+            self.executeOrder66()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -19,9 +23,22 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! DetailTableViewCell
+        let post = PostController.shared.posts[indexPath.row]
+        cell.post = post
         
         return cell
+    }
+    
+    // MARK: - Methods
+    func executeOrder66() {
+        PostController.shared.fetchPosts { (posts) in
+            if posts != nil {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     // MARK: - Navigation
@@ -35,4 +52,9 @@ class HomeTableViewController: UITableViewController {
     }
 }
 
-
+extension HomeTableViewController : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchArray = PostController.shared.posts.filter { $0.matches(searchTerm: searchText) }
+        tableView.reloadData()
+    }
+}
